@@ -1,0 +1,245 @@
+<!doctype html>
+<html>
+<head>
+  <title>calculator</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://kit.fontawesome.com/dcc2eed5d1.js" crossorigin="anonymous"></script>
+  <style>
+  body{
+	 background-color: pink;
+}
+#box{
+	  height: 480px;
+	  width: 400px;
+	  background-color:white;
+	  position:relative;
+	  border-radius:10px;
+}
+#n1{
+	height: 65px;
+	width:380px;
+	position:absolute;
+	top:10px;
+	left:10px;
+}
+.plus{
+	      height: 65px;
+		  width: 75px;
+		  position:absolute;
+		  top:85px;
+		  left:10px;
+}
+.minus{
+	      height: 65px;
+		  width: 75px;
+		  position:absolute;
+		  top:85px;
+		  left:115px;
+}
+.mul{
+	      height: 65px;
+		  width: 75px;
+		  position:absolute;
+		  top:85px;
+		  left:215px;
+}
+.div{
+	      height: 65px;
+		  width: 75px;
+		  position:absolute;
+		  top:85px;
+		  left:310px;
+}
+.icon{
+	  color:white;
+      font-size: 35px;
+}
+.equal{
+	      height: 305px;
+		  width: 75px;
+		  position:absolute;
+		  top:160px;
+		  left:310px;
+}
+.numbox7{
+	      height: 65px;
+		  width: 75px;
+		  position:absolute;
+		  top:160px;
+		  left:10px;
+}
+.numbox8{
+	      height: 65px;
+		  width: 75px;
+		  position:absolute;
+		  top:160px;
+		  left:115px;
+}
+.numbox9{
+	      height: 65px;
+		  width: 75px;
+		  position:absolute;
+		  top:160px;
+		  left:215px;
+}
+.numbox4{
+	      height: 65px;
+		  width: 75px;
+		  position:absolute;
+		  top:240px;
+		  left:10px;
+}
+.numbox5{
+	      height: 65px;
+		  width: 75px;
+		  position:absolute;
+		  top:240px;
+		  left:115px;
+}
+.numbox6{
+	      height: 65px;
+		  width: 75px;
+		  position:absolute;
+		  top:240px;
+		  left:215px;
+}
+.numbox1{
+	      height: 65px;
+		  width: 75px;
+		  position:absolute;
+		  top:320px;
+		  left:10px;
+}
+.numbox2{
+	      height: 65px;
+		  width: 75px;
+		  position:absolute;
+		  top:320px;
+		  left:115px;
+}
+.numbox3{
+	      height: 65px;
+		  width: 75px;
+		  position:absolute;
+		  top:320px;
+		  left:215px;
+}
+.numbox0{
+	      height: 65px;
+		  width: 75px;
+		  position:absolute;
+		  top:400px;
+		  left:10px;
+}
+.dot{
+	      height: 65px;
+		  width: 75px;
+		  position:absolute;
+		  top:400px;
+		  left:115px;
+}
+.ac{
+	      height: 65px;
+		  width: 75px;
+		  position:absolute;
+		  top:400px;
+		  left:215px;
+}
+  </style>
+</head>
+<body>
+ <div id="box" class= "container mt-3" >
+     <div class="row">
+	   <input type="number" id="n1" class="form-control bg-primary" readonly/>
+	 </div>
+	 
+	 <div class="row">
+	    <div class="col-lg-2">
+	     <button type="button" onclick="insert('+')"  id="pls" class="btn btn-success plus"> +</button>
+		</div>
+		<div class="col-lg-2">
+	     <button type="button" onclick="insert('-')"  id="minus"  class="btn btn-success minus"> -</button>
+		</div>
+	    <div class="col-lg-2">
+	     <button type="button"  onclick="insert('*')" id="mul" class="btn btn-success mul"> *</button>
+		</div>
+		 <div class="col-lg-2">
+	     <button type="button"   onclick="insert('/')" id="div" class="btn btn-success div" > /</button>
+		</div>
+	 </div>
+	 
+	 <div class="row">
+	 
+	     <div class="col-lg-2">
+		     <button type="button" class="btn btn-lg btn-danger equal"> = </button>
+		 <div>
+		 
+	     <div class="row">
+	       <div class="col-lg-2 bg-info">
+	        <button type="button"  onclick="insert('7')" id="seven" class="btn btn-lg btn-info numbox7"> 7 </button>
+	       </div>
+	   	   <div class="col-lg-2 bg-info">
+	        <button type="button" onclick="insert('8')" id="eight" class="btn btn-lg btn-info numbox8"> 8 </button>
+	       </div>
+	       <div class="col-lg-2 bg-info">
+	        <button type="button" onclick="insert('9')" id="nine" class="btn btn-lg btn-info numbox9"> 9 </button>
+	       </div>
+		 </div>
+		 
+		  <div class="row">
+	       <div class="col-lg-2 bg-info">
+	        <button type="button" onclick="insert('4')"  id="four" class="btn btn-lg btn-info numbox4"> 4 </button>
+	       </div>
+	   	   <div class="col-lg-2 bg-info">
+	        <button type="button" onclick="insert('5')"  id="five" class="btn btn-lg btn-info numbox5"> 5 </button>
+	       </div>
+	       <div class="col-lg-2 bg-info">
+	        <button type="button" onclick="insert('6')" id="six" class="btn btn-lg btn-info numbox6"> 6 </button>
+	       </div>
+		 </div>
+		 
+		  <div class="row">
+	       <div class="col-lg-2 bg-info">
+	        <button type="button"  onclick="insert('1')" id="one" class="btn btn-lg btn-info numbox1"> 1 </button>
+	       </div>
+	   
+	   	   <div class="col-lg-2 bg-info">
+	        <button type="button" onclick="insert('2')"  id="two" class="btn btn-lg btn-info numbox2"> 2 </button>
+	       </div>
+	   
+	       <div class="col-lg-2 bg-info">
+	        <button type="button"  onclick="insert('3')" id="three" class="btn btn-lg btn-info numbox3"> 3 </button>
+	       </div>
+		 </div>
+		 
+	     <div class="row">
+	       <div class="col-lg-2 bg-info">
+	        <button type="button" onclick="insert('0')" id="zero" class="btn btn-lg btn-info numbox0"> 0 </button>
+	       </div>
+	   
+	   	   <div class="col-lg-2 bg-info">
+	        <button type="button" onclick="insert('.')" id="dot" class="btn btn-lg btn-info dot"> . </button>
+	       </div>
+	   
+	       <div class="col-lg-2 bg-info">
+	        <button type="button" id="" class="btn btn-lg btn-info ac"> AC </button>
+	       </div>
+		 </div>
+	 </div>
+	 
+    
+ </div>
+<script>
+         let  val= "";
+         function insert(value){
+                                 val += value;
+								 document.getElementById("n1").value = val; 
+		                         }
+ 
+</script>
+
+</body>
+</html>
